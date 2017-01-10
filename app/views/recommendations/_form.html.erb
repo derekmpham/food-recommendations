@@ -1,0 +1,11 @@
+<%= form_for([user, recommendation], remote:true, html: {class: "red"}) do |f| %>
+
+<%= f.text_field :name, placeholder: "name" %>
+<%= f.text_field :cuisine, placeholder: "cuisine" %>
+<br>
+<%= f.text_field :location, placeholder: "location" %>
+<br>
+<%= f.text_field :description, placeholder: "description" %>
+<br>
+<%= f.submit %>
+<% end %>

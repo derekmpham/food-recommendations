@@ -1,0 +1,25 @@
+<h2>Hey <%= @user.username %>!</h2>
+
+<br>
+<br>
+
+<h4>Recommendations:</h4>
+
+<br>
+
+<ul>
+<%= render partial: "recommendation", collection: @recommendations %>
+</ul>
+
+<br>
+<br>
+
+<%= render partial: "form", locals: {user: @user, recommendation: @recommendation} %>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<a href="/logout">Logout</a>

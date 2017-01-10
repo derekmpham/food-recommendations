@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   	@user = User.find_by_username(params[:username])
   	if @user && @user.password == params[:password]
   	  login(@user)
-  	  redirect_to '/users/#{@user.id}'
+  	  redirect_to "/users/#{@user.id}/recommendations"
   	else
   	  redirect_to '/login'
   	end

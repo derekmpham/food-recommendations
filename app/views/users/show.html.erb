@@ -7,9 +7,23 @@
 <% @recommendations.each do |rec| %>
 <p>Name: <%= rec.name %></p><br>
 <p>Cuisine: <%= rec.cuisine %></p><br>
+<p>Location: <%= rec.location %></p><br>
 <p>Description: <%= rec.description %></p><br>
 <p>Recommended by <%= rec.username %></p>
 <br>
 <br>
 <br>
 <% end %>
+
+<br>
+<br>
+
+<%= link_to "Recommend a Place", new_recommendation_path %>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<a href="/logout">Logout</a>
