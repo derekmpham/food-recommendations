@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   	@user.password = params[:user][:password_hash]
   	if @user.save
   	  session[:user_id] = @user.id
-  	  redirect_to '/resources'
+  	  redirect_to '/users/#{@user.id}'
   	else
   	  redirect_to '/users/new'
   	end
