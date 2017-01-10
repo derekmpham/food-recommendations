@@ -17,6 +17,11 @@ class UsersController < ApplicationController
   	end
   end
 
+  def show
+    @user = User.find(params[:id])
+    @recommendations = Recommendation.all
+  end
+
   private
 
   def user_params

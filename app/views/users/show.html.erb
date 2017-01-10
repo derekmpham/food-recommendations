@@ -1,0 +1,15 @@
+<h2>Hey <%= @user.username %>!</h2>
+
+<br>
+<br>
+
+<h4>Some places your friends recommend eating:</h4>
+<% @recommendations.each do |rec| %>
+<p>Name: <%= rec.name %></p><br>
+<p>Cuisine: <%= rec.cuisine %></p><br>
+<p>Description: <%= rec.description %></p><br>
+<p>Recommended by <%= rec.username %></p>
+<br>
+<br>
+<br>
+<% end %>
