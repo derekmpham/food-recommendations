@@ -1,0 +1,3 @@
+$("#rec-<%= @recommendation.id %>").html("<%= j render partial: 'recommendation', locals: {recommendation: @recommendation} %>");
+
+$("#rec-<%= @recommendation.id %>")[0].reset();

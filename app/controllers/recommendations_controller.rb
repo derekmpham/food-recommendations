@@ -15,13 +15,9 @@ class RecommendationsController < ApplicationController
     respond_to do |format|
       if @recommendation.save
         format.js {}
-        format.json { render json: @recommendation }
-        # format.html { redirect_to @recommendation, notice: 'Recommendation was successfully created.' }
-        # format.json { render :show, status: :created, location: @recommendation }
+        # format.json { render json: @recommendation }
       else
         format.js { render :error, status: 422 }
-        # format.html { render :new }
-        # format.json { render json:@recommendation.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -39,9 +35,27 @@ class RecommendationsController < ApplicationController
   end
 
   def update
+    @recommendation = Recommendation.find(params[:id])
+    respond_to do |format|
+      if @recommendation.update(recommendation_params)
+        format.js {}
+      else
+        format.js { render :error, status: 422 }
+      end
+    end
   end
 
   def destroy
+    @recommendation = Recommendation.find(params[:id])
+    respond_to do |format|
+      if @recommendation.user_id == current_user.id
+        @recommendation.destroy
+        format.js {}
+        # format.json { render json: @recommendation }
+      else
+        format.js { render :error, status: 422 }
+      end
+    end
   end
 
   private
