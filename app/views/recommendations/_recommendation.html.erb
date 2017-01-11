@@ -1,0 +1,17 @@
+<div id="rec-<%= recommendation.id %>"%>>
+	Name: <%= recommendation.name %><br>
+	Cuisine: <%= recommendation.cuisine %><br>
+	Location: <%= recommendation.location %><br>
+	Description: <%= recommendation.description %><br>
+	Recommended by: <%= recommendation.user.username %><br>
+
+	<% if recommendation.user_id == current_user.id %>
+		<button id=<%="slidedown-#{recommendation.id}"%> class="slidedown">Update</button>
+		<div id="reveal-<%= recommendation.id %>" style="display:none"><%= render partial: "form", locals: { user: recommendation.user, recommendation: recommendation } %></div>
+		<%= link_to "Delete", user_recommendation_path(recommendation.user, recommendation), method: 'delete', remote:true %>
+	<% end %>
+	
+	<br>
+	<br>
+
+</div>

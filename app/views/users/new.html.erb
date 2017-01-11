@@ -1,0 +1,12 @@
+<h2>Sign Up</h2>
+
+<%= form_for :user, url: '/users' do |f| %>
+<%= label :email, 'Email' %></br>
+<%= f.text_field :email %></br>
+<%= label :username, 'Username' %></br>
+<%= f.text_field :username %></br>  
+<%= label :password_hash, 'Password' %></br>
+<%= f.password_field :password_hash %></br>
+<%= f.submit "Submit" %>
+
+<% end %>
