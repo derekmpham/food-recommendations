@@ -5505,3 +5505,80 @@ Processing by RecommendationsController#index as HTML
 Completed 200 OK in 105ms (Views: 63.7ms | ActiveRecord: 37.8ms)
 
 
+Started POST "/users/3/recommendations" for ::1 at 2017-01-17 14:52:04 -0800
+Processing by RecommendationsController#create as JS
+  Parameters: {"utf8"=>"✓", "recommendation"=>{"name"=>"Mission Chinese", "cuisine"=>"Chinese", "location"=>"SF", "description"=>"Very unique Chinese food--Anthony Bourdain came here!"}, "commit"=>"Create Recommendation", "user_id"=>"3"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (22.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (26.5ms)[0m  [1m[32mINSERT INTO "recommendations" ("name", "cuisine", "location", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Mission Chinese"], ["cuisine", "Chinese"], ["location", "SF"], ["description", "Very unique Chinese food--Anthony Bourdain came here!"], ["user_id", 3], ["created_at", 2017-01-17 22:52:05 UTC], ["updated_at", 2017-01-17 22:52:05 UTC]]
+  [1m[35m (95.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering recommendations/create.js.erb
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered recommendations/_form.html.erb (8.3ms)
+  Rendered recommendations/_recommendation.html.erb (38.0ms)
+  Rendered recommendations/create.js.erb (45.6ms)
+Completed 200 OK in 269ms (Views: 33.4ms | ActiveRecord: 168.1ms)
+
+
+Started POST "/users/3/recommendations" for ::1 at 2017-01-17 14:52:41 -0800
+Processing by RecommendationsController#create as JS
+  Parameters: {"utf8"=>"✓", "recommendation"=>{"name"=>"Mission Chinese", "cuisine"=>"Chinese", "location"=>"SF", "description"=>"Very hipster place in Mission--Anthony Bourdain came here!"}, "commit"=>"Create Recommendation", "user_id"=>"3"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO "recommendations" ("name", "cuisine", "location", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Mission Chinese"], ["cuisine", "Chinese"], ["location", "SF"], ["description", "Very hipster place in Mission--Anthony Bourdain came here!"], ["user_id", 3], ["created_at", 2017-01-17 22:52:41 UTC], ["updated_at", 2017-01-17 22:52:41 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering recommendations/create.js.erb
+  [1m[36mUser Load (14.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered recommendations/_form.html.erb (2.9ms)
+  Rendered recommendations/_recommendation.html.erb (22.9ms)
+  Rendered recommendations/create.js.erb (26.6ms)
+Completed 200 OK in 53ms (Views: 19.9ms | ActiveRecord: 21.1ms)
+
+
+Started DELETE "/users/3/recommendations/18" for ::1 at 2017-01-17 14:52:43 -0800
+Processing by RecommendationsController#destroy as JS
+  Parameters: {"user_id"=>"3", "id"=>"18"}
+  [1m[36mRecommendation Load (0.9ms)[0m  [1m[34mSELECT  "recommendations".* FROM "recommendations" WHERE "recommendations"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[31mDELETE FROM "recommendations" WHERE "recommendations"."id" = $1[0m  [["id", 18]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering recommendations/destroy.js.erb
+  Rendered recommendations/destroy.js.erb (0.7ms)
+Completed 200 OK in 21ms (Views: 6.4ms | ActiveRecord: 4.5ms)
+
+
+Started DELETE "/users/3/recommendations/17" for ::1 at 2017-01-17 14:52:52 -0800
+Processing by RecommendationsController#destroy as JS
+  Parameters: {"user_id"=>"3", "id"=>"17"}
+  [1m[36mRecommendation Load (0.9ms)[0m  [1m[34mSELECT  "recommendations".* FROM "recommendations" WHERE "recommendations"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "recommendations" WHERE "recommendations"."id" = $1[0m  [["id", 17]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  Rendering recommendations/destroy.js.erb
+  Rendered recommendations/destroy.js.erb (0.5ms)
+Completed 200 OK in 20ms (Views: 7.1ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/users/3/recommendations" for ::1 at 2017-01-17 18:01:12 -0800
+Processing by RecommendationsController#index as HTML
+  Parameters: {"user_id"=>"3"}
+  [1m[36mUser Load (19.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 335ms (ActiveRecord: 283.4ms)
+
+
+  
+NameError (uninitialized constant RecommendationsController::Instagram):
+  
+app/controllers/recommendations_controller.rb:9:in `index'
+  Rendering /Users/apple/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/apple/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/apple/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.1ms)
+  Rendering /Users/apple/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/apple/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendering /Users/apple/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/apple/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.8ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (156.2ms)

@@ -5,12 +5,21 @@
 	Description: <%= recommendation.description %><br>
 	Recommended by: <%= recommendation.user.username %><br>
 
+	<% insta_tags = @insta_client.tag_search(recommendation.name.gsub(/\s+/, '')) %>
+	<h4>Tag Name = <%= "#{insta_tags[0].name}" %>. Media Count = <%= "#{insta_tags[0].media_count}" %>.</h4><br>
+	<% for media_item in @insta_client.tag_recent_media(insta_tags[0].name) %>
+		<img src=<%= "#{media_item.images.thumbnail.url}" %>>
+	<% end %>
+
+	<br>
+
 	<% if recommendation.user_id == current_user.id %>
 		<button id=<%="slidedown-#{recommendation.id}"%> class="slidedown">Update</button>
 		<div id="reveal-<%= recommendation.id %>" style="display:none"><%= render partial: "form", locals: { user: recommendation.user, recommendation: recommendation } %></div>
 		<%= link_to "Delete", user_recommendation_path(recommendation.user, recommendation), method: 'delete', remote:true %>
 	<% end %>
 	
+	<br>
 	<br>
 	<br>
 

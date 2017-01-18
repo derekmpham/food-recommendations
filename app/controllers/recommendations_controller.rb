@@ -6,6 +6,7 @@ class RecommendationsController < ApplicationController
     @user = User.find(params[:user_id])
     @recommendations = Recommendation.all
     @recommendation = Recommendation.new
+    @insta_client = Instagram.client(:access_token => session[:access_token])
   end
 
   def create
