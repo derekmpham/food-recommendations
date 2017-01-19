@@ -3,7 +3,6 @@ require_relative 'boot'
 require "rails"
 require 'instagram'
 require 'dotenv'
-Dotenv.load
 
 enable :sessions
 
