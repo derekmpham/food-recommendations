@@ -9,7 +9,8 @@
 <p>Cuisine: <%= rec.cuisine %></p><br>
 <p>City: <%= rec.city %></p><br>
 <p>Description: <%= rec.description %></p><br>
-<p>Location: <%= rec.address %></p><br>
+<p>Address: <%= rec.address %></p><br>
+<p><%= image_tag google_map(recommendation.address) %></p><br><br>
 <p>Recommended by <%= rec.username %></p>
 <br>
 <br>
