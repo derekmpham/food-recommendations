@@ -8,6 +8,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'instagram'
+gem 'google_maps_service'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'

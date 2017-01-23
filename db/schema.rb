@@ -18,8 +18,9 @@ ActiveRecord::Schema.define(version: 20170110063733) do
   create_table "recommendations", force: :cascade do |t|
     t.string   "name",        null: false
     t.string   "cuisine",     null: false
-    t.string   "location",    null: false
+    t.string   "city",        null: false
     t.text     "description"
+    t.string   "address",     null: false
     t.integer  "user_id",     null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false

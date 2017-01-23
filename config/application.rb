@@ -1,10 +1,21 @@
 require_relative 'boot'
 
 require "rails"
+require 'google_maps_service'
 require 'instagram'
 require 'dotenv'
 
-enable :sessions
+# CONFIGURE CLIENT FOR GOOGLE MAPS GEOCODING API
+# Setup global parameters
+GoogleMapsService.configure do |config|
+  config.key = ENV["GOOGLE_MAPS_GEOCODING_KEY"]
+  config.retry_timeout = 20
+  config.queries_per_second = 10
+end
+
+# Initialize client using global parameters
+gmaps = GoogleMapsService::Client.new
+
 
 CALLBACK_URL = "http://localhost:4567/oauth/callback"
 
