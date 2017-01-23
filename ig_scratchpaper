@@ -1,0 +1,18 @@
+curl \-F 'client_id=64e2ca8f1dc4436eab7ac5e98c0de27b' \
+    -F 'client_secret=16562af4e5814da695b106d3ed4f9b40' \
+    -F 'grant_type=authorization_code' \
+    https://api.instagram.com/oauth/access_token
+
+
+
+https://www.instagram.com/oauth/authorize/?client_id=["64e2ca8f1dc4436eab7ac5e98c0de27b"]&redirect_uri=http://localhost&response_type=token
+
+localhost:3000
+
+https://api.instagram.com/oauth/authorize/?client_id=b0e1a3ade60548a2b6ccc172cadfe552&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code
+
+https://api.instagram.com/oauth/authorize/?client_id=b0e1a3ade60548a2b6ccc172cadfe552&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=token
+
+
+access token we got from one of the two urls above
+e14c5f7cdb784be59e8378bb2d3f0877
