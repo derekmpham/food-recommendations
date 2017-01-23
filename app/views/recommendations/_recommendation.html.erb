@@ -1,16 +1,28 @@
-<div id="rec-<%= recommendation.id %>"%>>
+<div id="rec-<%= recommendation.id %>"%>
 	Name: <%= recommendation.name %><br>
 	Cuisine: <%= recommendation.cuisine %><br>
-	Location: <%= recommendation.location %><br>
+	City: <%= recommendation.city %><br>
 	Description: <%= recommendation.description %><br>
+	Address: <%= recommendation.address %><br>
+	<%= image_tag google_map(recommendation.address) %><br><br>
 	Recommended by: <%= recommendation.user.username %><br>
 
+	<% if false %>
+	<% insta_tags = @insta_client.tag_search(recommendation.name.gsub(/\s+/, '')) %>
+	<h4>Tag Name = <%= "#{insta_tags[0].name}" %>. Media Count = <%= "#{insta_tags[0].media_count}" %>.</h4><br>
+	<% for media_item in @insta_client.tag_recent_media(insta_tags[0].name) %>
+	<img src=<%= "#{media_item.images.thumbnail.url}" %>>
+	<% end %>
+	<% end %>
+
+
 	<% if recommendation.user_id == current_user.id %>
-		<button id=<%="slidedown-#{recommendation.id}"%> class="slidedown">Update</button>
-		<div id="reveal-<%= recommendation.id %>" style="display:none"><%= render partial: "form", locals: { user: recommendation.user, recommendation: recommendation } %></div>
-		<%= link_to "Delete", user_recommendation_path(recommendation.user, recommendation), method: 'delete', remote:true %>
+	<button id=<%="slidedown-#{recommendation.id}"%> class="slidedown">Update</button>
+	<div id="reveal-<%= recommendation.id %>" style="display:none"><%= render partial: "form", locals: { user: recommendation.user, recommendation: recommendation } %></div>
+	<%= link_to "Delete", user_recommendation_path(recommendation.user, recommendation), method: 'delete', remote:true %>
 	<% end %>
 	
+	<br>
 	<br>
 	<br>
 

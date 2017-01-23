@@ -1,6 +1,19 @@
 require_relative 'boot'
 
 require "rails"
+require 'instagram'
+require 'dotenv'
+
+
+CALLBACK_URL = "http://localhost:4567/oauth/callback"
+
+Instagram.configure do |config|
+  config.client_id = ENV["INSTAGRAM_CLIENT_ID"]
+  config.client_secret = ENV["INSTAGRAM_CLIENT_SECRET"]
+  # For secured endpoints only
+  #config.client_ips = '<Comma separated list of IPs>'
+end
+
 # Pick the frameworks you want:
 require "active_model/railtie"
 require "active_job/railtie"

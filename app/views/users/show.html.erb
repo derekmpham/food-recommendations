@@ -3,12 +3,13 @@
 <br>
 <br>
 
-<h4>Some places your friends recommend eating:</h4>
+<h4>Recommendations:</h4>
 <% @recommendations.each do |rec| %>
 <p>Name: <%= rec.name %></p><br>
 <p>Cuisine: <%= rec.cuisine %></p><br>
-<p>Location: <%= rec.location %></p><br>
+<p>City: <%= rec.city %></p><br>
 <p>Description: <%= rec.description %></p><br>
+<p>Location: <%= rec.address %></p><br>
 <p>Recommended by <%= rec.username %></p>
 <br>
 <br>
