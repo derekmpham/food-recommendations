@@ -1,12 +1,11 @@
 class RecommendationsController < ApplicationController
   
-  include SessionsHelper
+  include SessionsHelper, GmapsHelper
 
   def index
     # recent_media = Instagram.tag_recent_media('fashion')
     @user = User.find(params[:user_id])
     @recommendations = Recommendation.all
-    @gmaps = GoogleMapsService::Client.new(key: ENV["GOOGLE_MAPS_GEOCODING_KEY"])
     @recommendation = Recommendation.new
     # response = Instagram.get_access_token(params[:code], :redirect_uri => "https://api.instagram.com/v1/tags/nofilter/media/recent?access_token=ACCESS_TOKEN")
     # session[:access_token] = response.access_token

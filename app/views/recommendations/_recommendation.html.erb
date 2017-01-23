@@ -3,7 +3,8 @@
 	Cuisine: <%= recommendation.cuisine %><br>
 	City: <%= recommendation.city %><br>
 	Description: <%= recommendation.description %><br>
-	Address: <%= @gmaps.geocode(recommendation.address) %><br>
+	Address: <%= recommendation.address %><br>
+	<%= image_tag google_map(recommendation.address) %><br><br>
 	Recommended by: <%= recommendation.user.username %><br>
 
 	<% if false %>
@@ -14,7 +15,6 @@
 	<% end %>
 	<% end %>
 
-	<br>
 
 	<% if recommendation.user_id == current_user.id %>
 	<button id=<%="slidedown-#{recommendation.id}"%> class="slidedown">Update</button>
