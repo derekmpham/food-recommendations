@@ -3,10 +3,9 @@
 	Cuisine: <%= recommendation.cuisine %><br>
 	City: <%= recommendation.city %><br>
 	Description: <%= recommendation.description %><br>
-	Address: <%= recommendation.address %><br>
-	<% address_url = recommendation.address.gsub(/[ ]/, '+') +  ",+" + recommendation.city %>
+	<% place_url = recommendation.name.gsub(/[ ]/, '+') +  "," + recommendation.city.gsub(/[ ]/, '+') %>
 	<iframe width="300" height="300" frameborder="0" style="border:0"
-	src="https://www.google.com/maps/embed/v1/place?key=<%= ENV["GOOGLE_MAPS_EMBED_KEY"] %>&q=<%= address_url %>"
+	src="https://www.google.com/maps/embed/v1/place?key=<%= ENV["GOOGLE_MAPS_EMBED_KEY"] %>&q=<%= place_url %>"
 	allowfullscreen>
 	</iframe>
 	

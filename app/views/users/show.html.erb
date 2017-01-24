@@ -9,11 +9,11 @@
 <p>Cuisine: <%= rec.cuisine %></p><br>
 <p>City: <%= rec.city %></p><br>
 <p>Description: <%= rec.description %></p><br>
-<p>Address: <%= rec.address %></p><br>
-<% address_url = rec.address.gsub(/[ ]/, '+') +  ",+" + rec.city %>
+<% place_url = rec.name.gsub(/[ ]/, '+') +  "," + rec.city.gsub(/[ ]/, '+') %>
 <p><iframe width="300" height="300" frameborder="0" style="border:0"
-	src="https://www.google.com/maps/embed/v1/place?key=<%= ENV["GOOGLE_MAPS_EMBED_KEY"] %>&q=<%= address_url %>"
-	allowfullscreen></p><br><br>
+	src="https://www.google.com/maps/embed/v1/place?key=<%= ENV["GOOGLE_MAPS_EMBED_KEY"] %>&q=<%= place_url %>"
+	allowfullscreen>
+</iframe></p><br><br>
 <p>Recommended by <%= rec.username %></p>
 <br>
 <br>
