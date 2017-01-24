@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20170110063733) do
     t.string   "cuisine",     null: false
     t.string   "city",        null: false
     t.text     "description"
-    t.string   "address",     null: false
     t.integer  "user_id",     null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
