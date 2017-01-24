@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
   def create
   	@user = User.find_by_username(params[:username])
-  	if @user && @user.password == params[:password]
+  	if @user && @user.authenticate(params[:password])
   	  login(@user)
   	  redirect_to "/users/#{@user.id}/recommendations"
   	else
