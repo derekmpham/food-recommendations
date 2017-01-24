@@ -9,9 +9,10 @@
 	src="https://www.google.com/maps/embed/v1/place?key=<%= ENV["GOOGLE_MAPS_EMBED_KEY"] %>&q=<%= address_url %>"
 	allowfullscreen>
 	</iframe>
-<% if false %>
-<%= image_tag google_map(recommendation.address) %><br><br>
-<% end %>
+	
+	<br>
+	<br>
+
 Recommended by: <%= recommendation.user.username %><br>
 
 <% if false %>
