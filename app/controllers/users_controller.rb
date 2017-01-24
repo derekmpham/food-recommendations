@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
   def create
   	@user = User.new(user_params)
-  	@user.password = params[:user][:password_hash]
+  	@user.password = params[:user][:password]
     @recommendations = Recommendation.all
   	if @user.save
   	  session[:user_id] = @user.id
@@ -30,6 +30,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-  	params.require(:user).permit(:email, :username, :password_hash)
+  	params.require(:user).permit(:email, :username, :password)
   end
 end

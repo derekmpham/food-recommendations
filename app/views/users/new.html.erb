@@ -4,9 +4,11 @@
 <%= label :email, 'Email' %></br>
 <%= f.text_field :email %></br>
 <%= label :username, 'Username' %></br>
-<%= f.text_field :username %></br>  
-<%= label :password_hash, 'Password' %></br>
-<%= f.password_field :password_hash %></br>
+<%= f.text_field :username %></br>
+<%= label :password, 'Password' %></br>
+<%= f.password_field :password %></br>
+<%= label :password_confirmation, 'Confirm Password' %></br>
+<%= f.password_field :password_confirmation %></br>
 <%= f.submit "Submit" %>
 
 <% end %>

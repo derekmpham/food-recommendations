@@ -10435,3 +10435,188 @@ Processing by ApplicationController#index as HTML
 Completed 200 OK in 55ms (Views: 53.5ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2017-01-24 10:31:25 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (21.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 371ms (Views: 351.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-01-24 10:31:38 -0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 89ms (Views: 84.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-01-24 10:31:39 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bqgHodtJx/kHLCHu+EPHLrhAXWqJkjsrOk2ZqGsaSV6UfOCL8fxDwNcR8lcgVcqQIR/ed3JnSNiIsKPYlyPVzQ==", "username"=>"dpham", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (21.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "dpham"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 216ms (ActiveRecord: 141.3ms)
+
+
+  
+NoMethodError (undefined method `authenticate' for #<User:0x007fa4c349d7d8>):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+  Rendering /Users/apple/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/apple/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/apple/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.2ms)
+  Rendering /Users/apple/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/apple/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendering /Users/apple/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/apple/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (158.2ms)
+Started POST "/login" for ::1 at 2017-01-24 10:32:12 -0800
+Started GET "/" for ::1 at 2017-01-24 10:32:22 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bqgHodtJx/kHLCHu+EPHLrhAXWqJkjsrOk2ZqGsaSV6UfOCL8fxDwNcR8lcgVcqQIR/ed3JnSNiIsKPYlyPVzQ==", "username"=>"dpham", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "dpham"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/1/recommendations
+Completed 302 Found in 223ms (ActiveRecord: 90.0ms)
+
+
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 105ms (Views: 103.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-01-24 10:32:24 -0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 164ms (Views: 158.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-01-24 10:32:25 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ygfVQxmj7/MohjX0L7m1Ui66mG8XUBfnS93CHiC10fUw0zJpMxZryvi75k33r7jst+UbcuylZBT5IPhu3IxNZg==", "username"=>"dpham", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "dpham"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/1/recommendations
+Completed 302 Found in 204ms (ActiveRecord: 6.1ms)
+
+
+Started GET "/users/1/recommendations" for ::1 at 2017-01-24 10:32:25 -0800
+Processing by RecommendationsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recommendations/index.html.erb within layouts/application
+  [1m[36mRecommendation Load (13.5ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered recommendations/_form.html.erb (21.3ms)
+  [1m[36mUser Load (18.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of recommendations/_recommendation.html.erb [2 times] (98.8ms)
+  Rendered recommendations/_form.html.erb (3.2ms)
+  Rendered recommendations/index.html.erb within layouts/application (128.5ms)
+Completed 200 OK in 306ms (Views: 186.3ms | ActiveRecord: 66.3ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (2.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (1221.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "food-recommendations_development"[0m
+  [1m[35m (1149.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "food-recommendations_test"[0m
+  [1m[35m (50.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (24.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7407149692350200100);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (9.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20170110051952)
+  [1m[35m (16.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (25.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "email" character varying, "username" character varying, "password_digest" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (13.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170110051952"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRecommendations (20170110063733)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (25.9ms)[0m  [1m[35mCREATE TABLE "recommendations" ("id" serial primary key, "name" character varying NOT NULL, "cuisine" character varying NOT NULL, "city" character varying NOT NULL, "description" text, "user_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (18.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170110063733"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (16.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-01-24 20:21:25 UTC], ["updated_at", 2017-01-24 20:21:25 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7407149692350200100)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for ::1 at 2017-01-24 12:21:43 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (38.3ms)
+Completed 200 OK in 1333ms (Views: 1217.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2017-01-24 12:21:49 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (53.2ms)
+Completed 200 OK in 388ms (Views: 234.1ms | ActiveRecord: 91.2ms)
+
+
+Started POST "/users" for ::1 at 2017-01-24 12:21:58 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L/qFkC8AykHuDOLsHQXKBpmO+HarwMPLMTQ2yo43UhycYVz2lzlOPqvzzjL4paA40SJefz+8lFqHvQeubQFPSg==", "user"=>{"email"=>"derekmpham@gmail.com", "username"=>"dpham", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+Unpermitted parameter: password_confirmation
+  [1m[35m (14.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (20.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "derekmpham@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "dpham"], ["LIMIT", 1]]
+  [1m[35mSQL (22.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "derekmpham@gmail.com"], ["username", "dpham"], ["password_digest", "$2a$10$zxjPsV56fWosW9490bsKxOlDNsv0sTgQjUn8ykO9fh2uB5/rw0iVW"], ["created_at", 2017-01-24 20:21:59 UTC], ["updated_at", 2017-01-24 20:21:59 UTC]]
+  [1m[35m (20.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/1/recommendations
+Completed 302 Found in 473ms (ActiveRecord: 77.8ms)
+
+
+Started GET "/users/1/recommendations" for ::1 at 2017-01-24 12:21:59 -0800
+Processing by RecommendationsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recommendations/index.html.erb within layouts/application
+  [1m[36mRecommendation Load (1.1ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  Rendered collection of recommendations/_recommendation.html.erb [0 times] (0.0ms)
+  Rendered recommendations/_form.html.erb (15.2ms)
+  Rendered recommendations/index.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 208ms (Views: 148.2ms | ActiveRecord: 28.8ms)
+
+
+Started POST "/users/1/recommendations" for ::1 at 2017-01-24 12:24:28 -0800
+Processing by RecommendationsController#create as JS
+  Parameters: {"utf8"=>"✓", "recommendation"=>{"name"=>"Le Bernardin", "cuisine"=>"French", "city"=>"New York", "description"=>"Well-known for seafood. Must try the pounded tuna foie gras. One of New York's three-star Michelin restaurants"}, "commit"=>"Create Recommendation", "user_id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (16.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (3.7ms)[0m  [1m[32mINSERT INTO "recommendations" ("name", "cuisine", "city", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Le Bernardin"], ["cuisine", "French"], ["city", "New York"], ["description", "Well-known for seafood. Must try the pounded tuna foie gras. One of New York's three-star Michelin restaurants"], ["user_id", 1], ["created_at", 2017-01-24 20:24:28 UTC], ["updated_at", 2017-01-24 20:24:28 UTC]]
+  [1m[35m (20.6ms)[0m  [1m[35mCOMMIT[0m
+  Rendering recommendations/create.js.erb
+  [1m[36mUser Load (18.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered recommendations/_form.html.erb (9.9ms)
+  Rendered recommendations/_recommendation.html.erb (36.9ms)
+  Rendered recommendations/create.js.erb (45.4ms)
+Completed 200 OK in 210ms (Views: 40.0ms | ActiveRecord: 74.6ms)
+
+
+Started GET "/logout" for ::1 at 2017-01-24 12:24:41 -0800
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-01-24 12:24:41 -0800
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 80ms (Views: 79.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-01-24 12:24:42 -0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 79ms (Views: 73.8ms | ActiveRecord: 0.0ms)
+
+
