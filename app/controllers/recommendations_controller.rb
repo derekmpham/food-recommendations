@@ -1,6 +1,6 @@
 class RecommendationsController < ApplicationController
   
-  include SessionsHelper, GmapsHelper
+  include SessionsHelper
 
   def index
     # recent_media = Instagram.tag_recent_media('fashion')
@@ -25,11 +25,6 @@ class RecommendationsController < ApplicationController
       end
     end
   end
-
-  # GET /posts/new
-  # def new
-  #   @recommendation = Recommendation.new
-  # end
 
   def edit
   end
