@@ -2,7 +2,6 @@ require_relative 'boot'
 
 require "rails"
 require 'instagram'
-require 'dotenv'
 
 
 CALLBACK_URL = "http://localhost:4567/oauth/callback"

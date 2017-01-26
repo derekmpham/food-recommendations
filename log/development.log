@@ -10928,3 +10928,43 @@ Processing by RecommendationsController#index as HTML
 Completed 200 OK in 301ms (Views: 125.8ms | ActiveRecord: 133.7ms)
 
 
+Started GET "/" for ::1 at 2017-01-25 17:59:45 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (26.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 513ms (Views: 485.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-01-25 17:59:49 -0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 119ms (Views: 115.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-01-25 17:59:51 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f3baDcBq02EIqpeZhIn/ptecmZXCT4BMEa/ue/9dfXdqbUWoBLHkrSApUpYfe7wbKpbCWaEx1tWTNBTv2yChRg==", "username"=>"dpham", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (29.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "dpham"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/1/recommendations
+Completed 302 Found in 212ms (ActiveRecord: 65.2ms)
+
+
+Started GET "/users/1/recommendations" for ::1 at 2017-01-25 17:59:51 -0800
+Processing by RecommendationsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recommendations/index.html.erb within layouts/application
+  [1m[36mRecommendation Load (16.4ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  [1m[36mUser Load (17.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered recommendations/_form.html.erb (10.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of recommendations/_recommendation.html.erb [2 times] (65.2ms)
+  Rendered recommendations/_form.html.erb (1.5ms)
+  Rendered recommendations/index.html.erb within layouts/application (91.6ms)
+Completed 200 OK in 261ms (Views: 159.8ms | ActiveRecord: 66.0ms)
+
+
