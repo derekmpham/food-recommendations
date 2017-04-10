@@ -1,24 +1,15 @@
-# README
+# Food Recs
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails app for posting and viewing places to eat. Other technologies used: Google Maps Embed API, AJAX.
 
-Things you may want to cover:
+## See food spots others are recommending
 
-* Ruby version
+screenshot
 
-* System dependencies
 
-* Configuration
+## Recommend a place for others to check out
 
-* Database creation
+screenshot
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# https://food-recommendations.herokuapp.com/
