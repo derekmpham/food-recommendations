@@ -7,7 +7,7 @@ Online community for posting and viewing places to eat. Tech stack: Ruby/Rails, 
 ![alt tag](https://github.com/derekmpham/food-recommendations/blob/master/view-rec.png)
 
 
-## Recommend a place for others to check out
+## Recommend a spot
 
 ![alt tag](https://github.com/derekmpham/food-recommendations/blob/master/create-rec.png)
 
