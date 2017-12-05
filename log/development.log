@@ -11067,3 +11067,125 @@ Processing by UsersController#new as HTML
 Completed 200 OK in 29ms (Views: 27.4ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2017-12-04 22:25:27 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (7.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 311ms (Views: 297.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-12-04 22:25:31 -0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (38.9ms)
+Completed 200 OK in 78ms (Views: 67.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-12-04 22:25:33 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bIvA3jCmJhFtdg7b3nLeMZAC/T43YPLyyu/o49c3t+G1Zu/sMBVdjMTegwD4OP/bJiLy7WqU188C7uOsQ/FKsQ==", "username"=>"7145011666", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "7145011666"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 37ms (ActiveRecord: 9.9ms)
+
+
+Started GET "/login" for ::1 at 2017-12-04 22:25:33 -0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 29ms (Views: 27.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-12-04 22:25:41 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"J0qXoQMTFvU8d97tNPHmqwbgKa4rbRvElIMLMSRo6Ya/BiSn6MRrtEtJdwZFMmh3M3wNwb96P9OW4f8A5YclLg==", "username"=>"derekmpham@gmail.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "derekmpham@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for ::1 at 2017-12-04 22:25:41 -0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 36ms (Views: 34.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-12-04 22:25:46 -0800
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 86ms (Views: 85.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2017-12-04 22:25:47 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 108ms (Views: 53.0ms | ActiveRecord: 42.1ms)
+
+
+Started POST "/users" for ::1 at 2017-12-04 22:25:58 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uR/a5HHj88hC8eSgW0Z2Bb4nLjCfK2PBXNedEb9AkfVT/ZwrznrRD2ljci0MzmPtBTTYHqnrOMpfjQ/VtCgzBw==", "user"=>{"email"=>"hi@123.com", "username"=>"username", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+Unpermitted parameter: password_confirmation
+  [1m[35m (3.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hi@123.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  [1m[35mSQL (6.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "hi@123.com"], ["username", "username"], ["password_digest", "$2a$10$6fRFJwH1JF.FtzStMNP2se3YrgyZ0XPO4OV6MDOF7m1ERuGQL3TwG"], ["created_at", 2017-12-05 06:25:59 UTC], ["updated_at", 2017-12-05 06:25:59 UTC]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/4/recommendations
+Completed 302 Found in 237ms (ActiveRecord: 13.7ms)
+
+
+Started GET "/users/4/recommendations" for ::1 at 2017-12-04 22:25:59 -0800
+Processing by RecommendationsController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering recommendations/index.html.erb within layouts/application
+  [1m[36mRecommendation Load (1.5ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered collection of recommendations/_recommendation.html.erb [2 times] (21.1ms)
+  Rendered recommendations/_form.html.erb (6.0ms)
+  Rendered recommendations/index.html.erb within layouts/application (34.4ms)
+Completed 200 OK in 102ms (Views: 79.5ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/logout" for ::1 at 2017-12-04 22:44:10 -0800
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-12-04 22:44:10 -0800
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 62ms (Views: 61.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2017-12-04 22:44:13 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 72ms (Views: 67.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-12-04 22:44:51 -0800
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 93ms (Views: 92.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-12-04 22:44:52 -0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 68ms (Views: 63.9ms | ActiveRecord: 0.0ms)
+
+
