@@ -11484,3 +11484,92 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 68ms (Views: 64.6ms | ActiveRecord: 0.0ms)
 
 
+Started POST "/login" for ::1 at 2017-12-11 22:11:00 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Tjy2x3UWW8pIg3gP8gksnHYV9YjHgKS5zBGZAaYhRE54iDojrXn2fvg7T4P93n7oj1z+3kFC5BHwOqQSQkvXEA==", "username"=>"username", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (17.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 131ms (ActiveRecord: 17.8ms)
+
+
+Started GET "/login" for ::1 at 2017-12-11 22:11:01 -0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 87ms (Views: 82.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-12-11 22:19:58 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KKTeEqC4JFBeOnw1uwcAJqWfTqVK7D6Aaij8mPm4algpQY5bufZGofYAGMM+nTdIv8mzLn+DrA2PLXMZF4hWJA==", "username"=>"username", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (18.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 124ms (ActiveRecord: 18.5ms)
+
+
+Started GET "/login" for ::1 at 2017-12-11 22:19:59 -0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 57ms (Views: 54.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-12-11 22:20:03 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7BTbdR3B1lwBNXZOBlSo3wQ0lcvR51eAWEBrLH4iRHLt8Ys8BI+0rakPEriDzp+xHmJoQOSIxQ29ReStkBJ4Dg==", "username"=>"user", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "user"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 6ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/login" for ::1 at 2017-12-11 22:20:03 -0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 54ms (Views: 50.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2017-12-11 22:20:15 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xm+DcjuEkAjxM1lp/lwGleS1Of2Bi8kMV66AZav/e6jHitM7Isry+VkJPZ97xjH7/uPEdrTkW4Gyqw/kRc9H1A==", "username"=>"qwer", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "qwer"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/5/recommendations
+Completed 302 Found in 87ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/users/5/recommendations" for ::1 at 2017-12-11 22:20:15 -0800
+Processing by RecommendationsController#index as HTML
+  Parameters: {"user_id"=>"5"}
+  [1m[36mUser Load (9.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering recommendations/index.html.erb within layouts/application
+  [1m[36mRecommendation Load (0.9ms)[0m  [1m[34mSELECT "recommendations".* FROM "recommendations"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered collection of recommendations/_recommendation.html.erb [2 times] (18.6ms)
+  Rendered recommendations/_form.html.erb (5.8ms)
+  Rendered recommendations/index.html.erb within layouts/application (34.4ms)
+Completed 200 OK in 86ms (Views: 62.0ms | ActiveRecord: 18.5ms)
+
+
+Started GET "/logout" for ::1 at 2017-12-11 22:28:00 -0800
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-12-11 22:28:00 -0800
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 70ms (Views: 68.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2017-12-11 22:41:00 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 89ms (Views: 81.4ms | ActiveRecord: 0.0ms)
+
+
