@@ -10,21 +10,20 @@ describe "User Features", :type => :feature do
 	# end
 
 	before :each do
-		test_user = User.create(email: 'user@example.com', username: 'user', password: 'password')
+		@test_user = User.create(email: 'user@example.com', username: 'user', password: 'password')
 	end
 
 	it "signs me in" do
 		visit '/login'
 		expect(page).to have_current_path(login_path)
-		
+
 		within('form') do
 			fill_in 'username', with: 'user'
 			fill_in 'password', with: 'password'
 		end
 		click_button 'Submit'
 		expect(page).to have_content 'Hey user!'
-		# expect(page).to have_current_path(user_recommendations_path(:id))
-		# expect(page).to have_current_path(people_path(search: 'name'))
+		expect(page).to have_current_path(user_recommendations_path(@test_user.id))
 	end
 
 	# next things to test
